@@ -5,7 +5,7 @@ import { Home, Category, News } from "./pages";
 // import { Category } from "./pages/category";
 
 import { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import useOwlCarousel from "./common/hooks/useOwlCarousel";
 import Footer from "./common/components/footer";
@@ -19,15 +19,12 @@ function App() {
     <div className="App">
       <Topbar />
       <Navbar />
-
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/news" element={<News />} />
-        </Routes>
-      </Router>
-
+      <Routes>
+        <Route exact path="/home" element={<Home />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+      </Routes>
       <Footer />
     </div>
   );

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import useOwlCarousel from "../../common/hooks/useOwlCarousel";
 
 function home() {
   return (
@@ -9,7 +10,7 @@ function home() {
           <div className="owl-carousel owl-carousel-2 carousel-item-3 position-relative">
             <div className="d-flex">
               <img
-                src={process.env.PUBLIC_URL + "img/news-100x100-1.jpg"}
+                src={"img/news-100x100-1.jpg"}
                 style={{ width: "80px", height: "80px", objectFit: "cover" }}
               />
               <div

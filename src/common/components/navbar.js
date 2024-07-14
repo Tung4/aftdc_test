@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -25,15 +25,35 @@ function Navbar() {
             id="navbarCollapse"
           >
             <div className="navbar-nav mr-auto py-0">
-              <a href="/" className="nav-item nav-link active">
+              {/* <a
+                href="/"
+                className={`nav-item nav-link ${
+                  currentPath === "/" ? "active" : ""
+                }`}
+              >
                 Home
-              </a>
-              <a href="/category" className="nav-item nav-link">
+              </a> */}
+              <NavLink
+                to="/home"
+                activeClassName="active"
+                className="nav-item nav-link"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/category"
+                activeClassName="active"
+                className="nav-item nav-link"
+              >
                 Categories
-              </a>
-              <a href="/news" className="nav-item nav-link">
+              </NavLink>
+              <NavLink
+                to="/news"
+                activeClassName="active"
+                className="nav-item nav-link"
+              >
                 Single News
-              </a>
+              </NavLink>
               <div className="nav-item dropdown">
                 <a
                   href="#"

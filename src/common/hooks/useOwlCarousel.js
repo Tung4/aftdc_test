@@ -1,6 +1,12 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const useOwlCarousel = () => {
+  const location = useLocation();
+
+  // Lấy đường dẫn hiện tại từ location
+  const currentPath = location.pathname;
+
   useEffect(() => {
     (function ($) {
       "use strict";
@@ -150,6 +156,6 @@ const useOwlCarousel = () => {
       });
       // eslint-disable-next-line no-undef
     })(jQuery);
-  }, []);
+  }, [currentPath]);
 };
 export default useOwlCarousel;
